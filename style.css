@@ -11,14 +11,15 @@
 
 }
 
-.btn_one{
+.btn_one i{
     color:white;
     font-size:30px;
     font-weight:700;
-     position:absolute;  /* this gives position relative to parent ocntainer,which is main_box, but since it also dosent have any position so itll get 16px from left of the whole page */
+    position:absolute;  /* this gives position relative to parent ocntainer,which is main_box, but since it also dosent have any position so itll get 16px from left of the whole page */
     left:16px;
     line-height:60px;
     cursor:pointer;
+    transition: all 0.3s linear;
 }
 
 .sidebar_menu{
@@ -28,15 +29,17 @@
     width:300px;
     background-color: rgba(255, 255, 255, 0.1); /*gives glass type effect */
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s linear;
 }
-.sidebar_menu .logo{
+.sidebar_menu .logo {
     position: absolute;
     width:100%;
+    height:60px;
     line-height: 60px;
-    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
 }
 
-.sidebar_menu .logo a{
+.sidebar_menu .logo a {
     position: absolute;
     left:50px;
     color: white;
@@ -53,6 +56,7 @@
     left:275px;
     opacity: 0;
     cursor:pointer;
+    transition: all 0.3s linear;
 }
 
 
@@ -75,7 +79,7 @@
     text-decoration:none;
 }
 
-.sidebar_menu .menu i,{
+.sidebar_menu .menu i{
     padding-right:10px;
 }
 
@@ -115,8 +119,21 @@
     transform: scale(1.1);
 
 }
-
+/* to show the hamburger when sidebar is hovered  */
 #check:checked ~ .sidebar_menu{
     left:0;
+ 
 
+}
+
+/* to make the hamburger menu hid when it is opened  */
+#check:checked ~ .btn_one i{
+    opacity:0;
+
+}
+/* currently button 2 has 0 opacity, we want on chekcing it gets visible*/
+/* button 2 is child inside sidebar menu */
+/* but actaully they are labels working as buttons */
+#check:checked ~ .sidebar_menu .btn_two i{
+    opacity:1;
 }
